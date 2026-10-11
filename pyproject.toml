@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sf311-pulse"
+version = "1.0.0"
+description = "A small, reproducible local-first pipeline for San Francisco 311 requests."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "sf311-pulse contributors" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+sf311-pulse = "sf311_pulse.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sf311_pulse*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
